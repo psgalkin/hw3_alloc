@@ -1,0 +1,14 @@
+language: cpp
+before_script:
+- sudo apt-get install libgtest-dev cmake -y
+- sudo cmake .
+- sudo cmake --build .
+script:
+- cmake .
+- cmake --build .
+- cmake --build . --target package
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - curl -T alloc-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -upsgalkin:$BINTRAY_API_KEY "https://api.bintray.com/content/psgalkin/hw3_alloc/hw3_alloc/$TRAVIS_BUILD_NUMBER/alloc-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
