@@ -4,7 +4,7 @@ PROJECT ( alloc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_executable ( alloc hw3.cpp )
 
-set_target_properties ( ip_filter PROPERTIES
+set_target_properties ( alloc PROPERTIES
     COMPILE_FLAGS -pthread 
     LINK_FLAGS -pthread
     CXX_STANDARD 14
