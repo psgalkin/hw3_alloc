@@ -1,6 +1,5 @@
 language: cpp
 before_script:
-- sudo apt-get install libgtest-dev cmake -y
 - sudo cmake .
 - sudo cmake --build .
 script:
