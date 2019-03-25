@@ -16,19 +16,19 @@ set_target_properties ( alloc container allocator pretty PROPERTIES
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
 
-target_link_libraries(alloc
-    container
-    allocator
-    pretty
-)
+#target_link_libraries(alloc
+#    container
+#    allocator
+#    pretty
+#)
 
-target_link_libraries(container
-    allocator
-)
+#target_link_libraries(container
+#    allocator
+#)
 
-target_link_libraries(allocator   
-    pretty
-)
+#target_link_libraries(allocator   
+#    pretty
+#)
 
 
 install(TARGETS alloc RUNTIME DESTINATION bin)
