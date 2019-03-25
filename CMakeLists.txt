@@ -20,7 +20,7 @@ target_link_libraries(alloc
     allocator
 )
 
-#target_link_libraries(container
+target_link_libraries(container
     allocator
 )
 
