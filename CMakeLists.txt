@@ -6,7 +6,6 @@ add_executable ( alloc hw3.cpp )
 
 add_library(container Contairer.h)
 add_library(allocator Map_allocator.h)
-add_library(pretty pretty.h)
 
 set_target_properties ( alloc PROPERTIES
     COMPILE_FLAGS -pthread 
@@ -16,20 +15,14 @@ set_target_properties ( alloc PROPERTIES
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
 
-#target_link_libraries(alloc
-#    container
-#    allocator
-#    pretty
-#)
+target_link_libraries(alloc
+    container
+    allocator
+)
 
 #target_link_libraries(container
-#    allocator
-#)
-
-#target_link_libraries(allocator   
-#    pretty
-#)
-
+    allocator
+)
 
 install(TARGETS alloc RUNTIME DESTINATION bin)
 
