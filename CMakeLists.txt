@@ -8,7 +8,7 @@ add_library(container Contairer.h)
 add_library(allocator Map_allocator.h)
 add_library(pretty pretty.h)
 
-set_target_properties ( alloc container allocator pretty PROPERTIES
+set_target_properties ( alloc PROPERTIES
     COMPILE_FLAGS -pthread 
     LINK_FLAGS -pthread
     CXX_STANDARD 14
