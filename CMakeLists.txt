@@ -4,13 +4,32 @@ PROJECT ( alloc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_executable ( alloc hw3.cpp )
 
-set_target_properties ( alloc PROPERTIES
+add_library(container Contairer.h)
+add_library(allocator Map_allocator.h)
+add_library(pretty pretty.h)
+
+set_target_properties ( alloc container allocator pretty PROPERTIES
     COMPILE_FLAGS -pthread 
     LINK_FLAGS -pthread
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
+
+target_link_libraries(alloc
+    container
+    allocator
+    pretty
+)
+
+target_link_libraries(container
+    allocator
+)
+
+target_link_libraries(allocator   
+    pretty
+)
+
 
 install(TARGETS alloc RUNTIME DESTINATION bin)
 
