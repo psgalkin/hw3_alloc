@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#define USE_PRETTY 1
+//#define USE_PRETTY 1
 
 template<typename T, int N>
 struct Map_allocator {
