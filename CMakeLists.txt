@@ -4,7 +4,8 @@ PROJECT ( alloc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_executable ( alloc hw3.cpp )
 
-add_library(container INTERFACE Contairer.h)
+set (container Container.h)
+add_library(container INTERFACE)
 target_include_directories(container INTERFACE include/)
 
 add_library(allocator INTERFACE Map_allocator.h)
