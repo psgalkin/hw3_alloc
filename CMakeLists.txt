@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED ( VERSION 3.2 )
 
-PROJECT ( alloc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}) 
+PROJECT ( allocator VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}) 
 
 add_executable ( alloc hw3.cpp )
 
