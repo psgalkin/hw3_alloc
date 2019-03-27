@@ -8,7 +8,8 @@ set (container Container.h)
 add_library(container INTERFACE)
 target_include_directories(container INTERFACE include/)
 
-add_library(allocator INTERFACE Map_allocator.h)
+set (allocator Map_allocator.h)
+add_library(allocator INTERFACE)
 target_include_directories(allocator INTERFACE include/)
 
 set_target_properties ( alloc PROPERTIES
