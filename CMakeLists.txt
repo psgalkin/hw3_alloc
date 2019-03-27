@@ -5,7 +5,10 @@ PROJECT ( alloc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 add_executable ( alloc hw3.cpp )
 
 add_library(container INTERFACE Contairer.h)
+target_include_directories(container INTERFACE include/)
+
 add_library(allocator INTERFACE Map_allocator.h)
+target_include_directories(allocator INTERFACE include/)
 
 set_target_properties ( alloc PROPERTIES
     COMPILE_FLAGS -pthread 
